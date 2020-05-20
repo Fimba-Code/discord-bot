@@ -3,7 +3,7 @@ import Members from "../controller/MembersHelper"
 import Discord from "discord.js"
 import Points from "../constants/points"
 import { greetNewUsers } from "./functions/greet-new-users"
-import { token, prefix, codeBlock } from "./config.json"
+import { prefix, codeBlock } from "./config.json"
 
 // create a new Discord client
 const client = new Discord.Client()
@@ -20,7 +20,7 @@ const fromMessageGetArgsAndCommand = (message, prefix) => {
   return { args, command }
 }
 
-client.on("message", async (message) => {
+client.on("message", async message => {
   // GAMIFY
   // Code block validator
   if (message.content.startsWith(codeBlock)) {
@@ -34,4 +34,4 @@ client.on("message", async (message) => {
   message.reply("Ola, sou o bot da Fimba")
 })
 
-client.login(token)
+client.login(process.env.BOT_TOKEN)
