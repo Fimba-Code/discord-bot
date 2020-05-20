@@ -1,10 +1,8 @@
 import { Router } from "express";
-import Participant from "./controller/Participant";
+import Members from "./controller/Members";
 
 const routes = Router();
 
-routes.get("/participants", Participant.index);
-routes.post("/participants", Participant.create);
-routes.post("/participants/points", Participant.addPoints);
+routes.get("/members", Members.index);
 
 export default routes;
