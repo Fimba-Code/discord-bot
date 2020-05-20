@@ -12,7 +12,7 @@
     "tsc": "tsc",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "build": "npm run tsc",
-    "prestart": "node dist/bot/index.js",
+    "prod:serve": "node dist/bot/index.js",
     "start": "npm run build && npm run prod:serve",
     "format": "prettier --write \"**/*.{js,ts,json,md}\""
   },
