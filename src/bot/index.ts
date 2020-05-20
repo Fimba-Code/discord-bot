@@ -31,7 +31,7 @@ client.on("message", async (message) => {
   }
   if (!message.content.startsWith(prefix) || message.author.bot) return
   client.on("guildMemberAdd", greetNewUsers)
-  message.reply("Ola, sou o bot da Fimba")
+  message.reply("Ola, sou o bot da Fimba :)")
 })
 
 client.login(process.env.BOT_TOKEN)
