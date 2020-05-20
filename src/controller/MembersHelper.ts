@@ -30,6 +30,7 @@ class MembersHelper {
     try {
       const members: Participant = await Members.findOne({ username })
       if (!members) return this.create(username, points)
+      // @ts-ignore FTM
       members.points += points
 
       await members.save()

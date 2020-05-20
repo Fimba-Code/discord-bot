@@ -20,7 +20,7 @@ const fromMessageGetArgsAndCommand = (message, prefix) => {
   return { args, command }
 }
 
-client.on("message", async message => {
+client.on("message", async (message) => {
   // GAMIFY
   // Code block validator
   if (message.content.startsWith(codeBlock)) {
