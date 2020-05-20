@@ -1,11 +1,10 @@
 {
   "name": "comp-ranking",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/bot/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.ts",
-    "bot": "nodemon src/bot/index.ts",
+    "dev": "nodemon src/bot/index.ts",
     "test": "NODE_ENV=test jest --forceExit --maxWorkers=10",
     "test:watch": "jest --watch",
     "ts:watch": "tsc -w",
@@ -13,8 +12,9 @@
     "tsc": "tsc",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "build": "npm run tsc",
-    "prod:serve": "node dist/server.js",
+    "prod:serve": "node dist/bot/index.js",
     "start": "npm run build && npm run prod:serve",
+    "heroku-postbuild": "npm start",
     "format": "prettier --write \"**/*.{js,ts,json,md}\""
   },
   "jest": {
