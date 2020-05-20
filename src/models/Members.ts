@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const ParticipantSchema = new mongoose.Schema(
+const MembersSchema = new mongoose.Schema(
   {
     username: String,
     points: Number,
@@ -8,4 +8,4 @@ const ParticipantSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Participant", ParticipantSchema);
+export default mongoose.model("Members", MembersSchema);
