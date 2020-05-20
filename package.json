@@ -14,6 +14,7 @@
     "build": "npm run tsc",
     "prod:serve": "node dist/bot/index.js",
     "start": "npm run build && npm run prod:serve",
+    "heroku-postbuild": "npm start",
     "format": "prettier --write \"**/*.{js,ts,json,md}\""
   },
   "jest": {
