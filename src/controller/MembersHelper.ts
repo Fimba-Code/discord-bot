@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 import Members from "../models/Members"
 
-interface Participant {
+interface Participant extends mongoose.Document {
   username?: string
   points?: number
 }
@@ -28,7 +28,7 @@ class MembersHelper {
 
   public async addPoints(username: string, points: number) {
     try {
-      const members = await Members.findOne({ username })
+      const members: Participant = await Members.findOne({ username })
       if (!members) return this.create(username, points)
       members.points += points
 
