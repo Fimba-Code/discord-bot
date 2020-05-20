@@ -12,9 +12,7 @@
     "tsc": "tsc",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "build": "npm run tsc",
-    "prod:serve": "node dist/bot/index.js",
-    "start": "npm run build && npm run prod:serve",
-    "heroku-postbuild": "npm start",
+    "start": "node dist/bot/index.js",
     "format": "prettier --write \"**/*.{js,ts,json,md}\""
   },
   "jest": {
