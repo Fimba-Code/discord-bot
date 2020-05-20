@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"
 
 const MembersSchema = new mongoose.Schema(
   {
@@ -6,6 +6,6 @@ const MembersSchema = new mongoose.Schema(
     points: Number,
   },
   { timestamps: true }
-);
+)
 
-export default mongoose.model("Members", MembersSchema);
+export default mongoose.model("Members", MembersSchema)
