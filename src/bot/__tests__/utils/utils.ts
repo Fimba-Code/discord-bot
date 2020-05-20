@@ -38,10 +38,8 @@ export class FakeDiscordClient {
     member?: FakeMember
   ) {
     this.events = {}
-    this.channels = [new FakeChannel("welcome")]
-    this.guild = new FakeGuildMember(
-      new FakeChannels(new FakeChannel("welcome"))
-    )
+    this.channels = [new FakeChannel("test")]
+    this.guild = new FakeGuildMember(new FakeChannels(new FakeChannel("test")))
     this.member = new FakeMember(this.guild)
     this.events = {}
 
