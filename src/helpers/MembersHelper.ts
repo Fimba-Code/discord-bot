@@ -4,6 +4,7 @@ import Members from "../models/Members"
 interface Participant extends mongoose.Document {
   username?: string
   points?: number
+  avatar?: string
 }
 
 class MembersHelper {
@@ -13,11 +14,12 @@ class MembersHelper {
       { useNewUrlParser: true }
     )
   }
-  public async create(username: string, points: number) {
+  public async create(username: string, points: number, avatar: string) {
     try {
       await Members.create({
         username,
         points,
+        avatar,
       })
 
       return true
@@ -26,10 +28,10 @@ class MembersHelper {
     }
   }
 
-  public async addPoints(username: string, points: number) {
+  public async addPoints(username: string, points: number, avatar: string) {
     try {
       const members: Participant = await Members.findOne({ username })
-      if (!members) return this.create(username, points)
+      if (!members) return this.create(username, points, avatar)
       members.points += points
 
       await members.save()
