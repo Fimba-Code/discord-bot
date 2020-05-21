@@ -15,6 +15,7 @@ client.once("ready", () => {
   console.log(`Hello world, I'm up and running 🤖!`)
 })
 
+client.on("guildMemberAdd", greetNewUsers)
 client.on("message", async (message) => {
   // GAMIFY
   // Code block validator
@@ -29,8 +30,6 @@ client.on("message", async (message) => {
   }
 
   if (!message.content.startsWith(prefix) || message.author.bot) return
-  client.on("guildMemberAdd", greetNewUsers)
-
   message.reply(replyToUsers(message.content.slice(prefix.length).trim()))
 })
 
