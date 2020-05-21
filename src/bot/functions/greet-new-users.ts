@@ -23,7 +23,7 @@ export const greetNewUsers = (member) => {
   )
   // Send the message, mentioning the member
   channel.send(`
-    Olá ${member}! 
+    Olá <@${member.user.id}>! 
     **Seja muito bem vinda(o) à nossa comunidade!** :rocket:
     > Esse é um espaço para você tirar suas dúvidas, compartilhar suas experiências, e principalmente, evoluir como programador.
 

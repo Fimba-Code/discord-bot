@@ -4,6 +4,9 @@ describe("Greetings", () => {
   it("should greet new users", () => {
     const { greetNewUsers } = require("../functions/greet-new-users")
     const member = {
+      user: {
+        id: "34249298295929592",
+      },
       guild: {
         channels: {
           cache: [
