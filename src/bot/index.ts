@@ -1,9 +1,9 @@
 import "dotenv/config"
-import Members from "../controller/MembersHelper"
+import Members from "../helpers/MembersHelper"
 import Discord from "discord.js"
 import Points from "../constants/points"
 import { greetNewUsers } from "./functions/greet-new-users"
-import { prefix, codeBlock } from "./config.json"
+import { prefix, codeBlock, avatarUrl, avatarExtension } from "./config.json"
 import { replyToUsers } from "./functions/reply-to-users"
 
 // create a new Discord client
@@ -24,7 +24,8 @@ client.on("message", async (message) => {
   ) {
     await Members.addPoints(
       `${message.author.username}#${message.author.discriminator}`,
-      Points.codeBlock
+      Points.codeBlock,
+      `${avatarUrl}/${message.author.id}/${message.author.avatar}.${avatarExtension}`
     )
   }
 

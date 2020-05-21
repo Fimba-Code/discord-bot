@@ -4,6 +4,7 @@ const MembersSchema = new mongoose.Schema(
   {
     username: String,
     points: Number,
+    avatar: String,
   },
   { timestamps: true }
 )
