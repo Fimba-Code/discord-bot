@@ -17,13 +17,9 @@ export const findChannelsByName = (
   channelNames: string[],
   channels: Collection<string, TextChannel | VoiceChannel>
 ) => {
-  return channelNames.reduce((acc, channelName): Array<
-    TextChannel | VoiceChannel
-  > => {
-    const channel = findChannelByName(channelName, channels)
-    acc.push(channel)
-    return acc
-  }, [])
+  return channelNames.map((channelName): TextChannel | VoiceChannel =>
+    findChannelByName(channelName, channels)
+  )
 }
 
 export const mapToChannelIds = (
