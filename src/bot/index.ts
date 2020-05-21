@@ -3,7 +3,13 @@ import Members from "../helpers/MembersHelper"
 import Discord from "discord.js"
 import Points from "../constants/points"
 import { greetNewUsers } from "./functions/greet-new-users"
-import { prefix, codeBlock, avatarUrl, avatarExtension } from "./config.json"
+import {
+  prefix,
+  codeBlock,
+  avatarUrl,
+  avatarExtension,
+  checkUrl,
+} from "./config.json"
 import { replyToUsers } from "./functions/reply-to-users"
 
 // create a new Discord client
@@ -17,7 +23,15 @@ client.once("ready", () => {
 
 client.on("guildMemberAdd", greetNewUsers)
 client.on("message", async (message) => {
-  // GAMIFY
+  // ===== GAMIFY ======
+  // URL
+  if (new RegExp(checkUrl).test(message.content)) {
+    await Members.addPoints(
+      `${message.author.username}#${message.author.discriminator}`,
+      Points.linkShare,
+      `${avatarUrl}/${message.author.id}/${message.author.avatar}.${avatarExtension}`
+    )
+  }
   // Code block validator
   if (
     message.content.startsWith(codeBlock) &&
