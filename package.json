@@ -18,7 +18,8 @@
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
-      "<rootDir>/src/bot/__tests__/utils/*"
+      "<rootDir>/src/bot/__tests__/utils/*",
+      "<rootDir>/dist/*"
     ],
     "globals": {
       "__TEST__": true
