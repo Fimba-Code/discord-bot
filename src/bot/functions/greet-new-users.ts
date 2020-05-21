@@ -2,7 +2,9 @@ import { findChannelsByName, mapToChannelIds } from "../utils/utils"
 
 export const greetNewUsers = (member) => {
   // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.cache.find((ch) => ch.name === "test")
+  const channel = member.guild.channels.cache.find(
+    (ch) => ch.name === "welcome"
+  )
   // Do nothing if the channel wasn't found on this server
   if (!channel) return
   const MODERADORES_ID = "<@&703604014704754708>"

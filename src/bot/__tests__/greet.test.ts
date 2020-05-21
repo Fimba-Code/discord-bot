@@ -7,7 +7,7 @@ describe("Greetings", () => {
       guild: {
         channels: {
           cache: [
-            createChannel("test"),
+            createChannel("welcome"),
             createChannel("general"),
             createChannel("links"),
             createChannel("help"),
