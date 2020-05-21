@@ -14,12 +14,6 @@ client.once("ready", () => {
   console.log(`Hello world, I'm up and running 🤖!`)
 })
 
-const fromMessageGetArgsAndCommand = (message, prefix) => {
-  const args = message.content.slice(prefix.length).split(/ +/)
-  const command = args.shift().toLowerCase()
-  return { args, command }
-}
-
 client.on("message", async (message) => {
   // GAMIFY
   // Code block validator
@@ -29,6 +23,7 @@ client.on("message", async (message) => {
       Points.codeBlock
     )
   }
+
   if (!message.content.startsWith(prefix) || message.author.bot) return
   client.on("guildMemberAdd", greetNewUsers)
   message.reply("Ola, sou o bot da Fimba")

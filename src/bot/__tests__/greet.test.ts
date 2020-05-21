@@ -1,11 +1,25 @@
+import { createChannel } from "./utils/utils"
+
 describe("Greetings", () => {
   it("should greet new users", () => {
     const { greetNewUsers } = require("../functions/greet-new-users")
-    const { FakeDiscordClient } = require("./utils/utils")
-    const client = new FakeDiscordClient()
-    client.on("guildMemberAdd", greetNewUsers)
-    client.fireEvent("guildMemberAdd")
-    expect(client.guild.channels.cache[0].send).toHaveBeenCalledTimes(1)
-    expect(client.guild.channels.cache[0].message).toBeTruthy
+    const member = {
+      guild: {
+        channels: {
+          cache: [
+            createChannel("test"),
+            createChannel("general"),
+            createChannel("links"),
+            createChannel("help"),
+            createChannel("apresentações"),
+            createChannel("off-topics"),
+            createChannel("vagas"),
+          ],
+        },
+      },
+    }
+    greetNewUsers(member)
+    expect(member.guild.channels.cache[0].send).toHaveBeenCalledTimes(1)
+    expect(member.guild.channels.cache[0].message).toBeTruthy
   })
 })
