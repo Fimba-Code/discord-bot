@@ -30,4 +30,4 @@ yarn dev
 If you want, you can play with the Bot's API by mocking them. Otherwise you'd want to create you own server to try it out
 or even ask us to provided a dev token.
 
-You'd also want to set up a mongo database based on our model.
+> ***Imporntant***: You'd also want to set up a mongo database based on our model. Please check `.env.example` to set up your testing environment.
