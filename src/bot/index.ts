@@ -4,6 +4,7 @@ import Discord from "discord.js"
 import Points from "../constants/points"
 import { greetNewUsers } from "./functions/greet-new-users"
 import { prefix, codeBlock } from "./config.json"
+import { replyToUsers } from "./functions/reply-to-users"
 
 // create a new Discord client
 const client = new Discord.Client()
@@ -17,7 +18,10 @@ client.once("ready", () => {
 client.on("message", async (message) => {
   // GAMIFY
   // Code block validator
-  if (message.content.startsWith(codeBlock)) {
+  if (
+    message.content.startsWith(codeBlock) &&
+    message.content.endsWith(codeBlock)
+  ) {
     await Members.addPoints(
       `${message.author.username}#${message.author.discriminator}`,
       Points.codeBlock
@@ -26,7 +30,8 @@ client.on("message", async (message) => {
 
   if (!message.content.startsWith(prefix) || message.author.bot) return
   client.on("guildMemberAdd", greetNewUsers)
-  message.reply("Ola, sou o bot da Fimba :)")
+
+  message.reply(replyToUsers(message.content.slice(prefix.length).trim()))
 })
 
 client.login(process.env.BOT_TOKEN)
