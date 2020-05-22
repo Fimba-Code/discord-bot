@@ -1,26 +1,26 @@
-import { feed } from "feed-read"
+import feed from "feed-read"
+
 
 const rssFeed = "https://blog.fimbacode.org/feed.xml"
 
-let link = '';
+const replyWithLink = () => {
 
-const replyWithLink = (messageContent: string) => {
+    let link = '';
 
-  if (messageContent.includes("!blog:last")) {
+    try {
 
-    feed(rssFeed, function(err, items) {
+    feedRSS(rssFeed, function(err, items) {
 
       if(err) return;
-
       [{link}] = items
-
       console.log(link)
-
-      return link
 
     })
 
-  }
+    return link
+
+    } catch(error) {}
+
 }
 
-export default replyWithLink
+replyWithLink()

@@ -18,7 +18,11 @@ const messages = async (message: Message) => {
     // ====== Send Last post Link =====
     if (message.content === "!blog:last") {
 
-      message.channel.send(replyWithLink(message.content));
+      // Vendo o que trás aqui?
+      console.log(replyWithLink)
+      // Enviar o link caso retorne
+      message.channel.send(replyWithLink)
+
     }
 
   // ===== GAMIFY ======
