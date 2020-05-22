@@ -11,18 +11,14 @@ const messages = async (message: Message) => {
 
     // ====== Send Blog Link =====
     if (message.content === "!blog") {
-
-      message.channel.send('Aqui está o link do nosso blog: ' + siteUrl)
-
+      message.reply("Aqui está o link do nosso blog: " + siteUrl)
     }
     // ====== Send Last post Link =====
     if (message.content === "!blog:last") {
-
-      // Vendo o que trás aqui?
-      console.log(replyWithLink)
-      // Enviar o link caso retorne
-      message.channel.send(replyWithLink)
-
+    
+      replyWithLink((link) =>
+        message.reply("Aqui está o link do último post " + link)
+      )
     }
 
   // ===== GAMIFY ======

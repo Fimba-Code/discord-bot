@@ -1,26 +1,13 @@
 import feed from "feed-read"
 
-
 const rssFeed = "https://blog.fimbacode.org/feed.xml"
 
-const replyWithLink = () => {
-
-    let link = '';
-
-    try {
-
-    feedRSS(rssFeed, function(err, items) {
-
-      if(err) return;
-      [{link}] = items
-      console.log(link)
-
-    })
-
-    return link
-
-    } catch(error) {}
-
+const replyWithLink = (cb: (arg: string) => void) => {
+  feed(rssFeed, function (err, items) {
+    if (err) return
+    const [{ link }] = items
+    cb(link)
+  })
 }
 
-replyWithLink()
+export default replyWithLink
