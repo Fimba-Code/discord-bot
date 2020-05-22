@@ -2,5 +2,11 @@
   "prefix": "!🤖",
   "codeBlock": "```",
   "checkUrl": "([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?",
-  "siteUrl": "https://blog.fimbacode.org"
+  "siteUrl": "https://blog.fimbacode.org",
+  "blogPrefix" : "!blog",
+  "postPrefix" : "!blog:last",
+  "twitterPrefix" : "!twitter",
+  "cursinhoPrefix": "!cursinho",
+  "logicaPrefix": "!logica",
+  "twitterProfile": "https://twitter.com/CodeFimba"
 }
