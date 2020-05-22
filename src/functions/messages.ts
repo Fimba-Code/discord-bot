@@ -8,18 +8,16 @@ import replyWithLink from "./reply-with-link"
 const isCodeBlock = "(`{3})([a-zA-Z0-9_ ])*(`{3})"
 
 const messages = async (message: Message) => {
-
-    // ====== Send Blog Link =====
-    if (message.content === "!blog") {
-      message.reply("Aqui está o link do nosso blog: " + siteUrl)
-    }
-    // ====== Send Last post Link =====
-    if (message.content === "!blog:last") {
-    
-      replyWithLink((link) =>
-        message.reply("Aqui está o link do último post " + link)
-      )
-    }
+  // ====== Send Blog Link =====
+  if (message.content === "!blog") {
+    message.reply("Aqui está o link do nosso blog: " + siteUrl)
+  }
+  // ====== Send Last post Link =====
+  if (message.content === "!blog:last") {
+    replyWithLink((link) =>
+      message.reply("Aqui está o link do último post " + link)
+    )
+  }
 
   // ===== GAMIFY ======
   // URL
@@ -38,7 +36,6 @@ const messages = async (message: Message) => {
       Points.codeBlock,
       `${message.author.avatarURL()}`
     )
-
   }
   // ===== END GAMIFY ======
 
