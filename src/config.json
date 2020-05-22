@@ -6,5 +6,7 @@
   "blogPrefix" : "!blog",
   "postPrefix" : "!blog:last",
   "twitterPrefix" : "!twitter",
+  "cursinhoPrefix": "!cursinho",
+  "logicaPrefix": "!logica",
   "twitterProfile": "https://twitter.com/CodeFimba"
 }

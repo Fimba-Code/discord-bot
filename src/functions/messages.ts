@@ -1,6 +1,6 @@
 import { Message } from "discord.js"
 import replyToUsers from "../helpers/reply-to-users"
-import { prefix, checkUrl, siteUrl, blogPrefix, postPrefix, twitterPrefix, twitterProfile } from "../config.json"
+import { prefix, checkUrl, siteUrl, blogPrefix, postPrefix, twitterPrefix, cursinhoPrefix, logicaPrefix, twitterProfile } from "../config.json"
 import Members from "../helpers/MembersHelper"
 import Points from "../constants/points"
 import replyWithLink from "./reply-with-link"
@@ -21,6 +21,16 @@ const messages = async (message: Message) => {
   // ===== Send Twitter URL ====
   if (message.content === twitterPrefix) {
     message.reply("Aqui está o link da nossa conta do Twitter" + twitterProfile)
+  }
+
+  // ==== Return a fimba joke ====
+  if (message.content === cursinhoPrefix) {
+    message.reply("Faça CURSINHOS. 🃏")
+  }
+
+  // ==== Return a fimba joke ====
+  if (message.content === logicaPrefix) {
+    message.reply("Estude LÓGICA. 🃏")
   }
 
   // ===== GAMIFY ======
