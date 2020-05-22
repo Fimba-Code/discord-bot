@@ -1,5 +1,5 @@
 import { Message } from "discord.js"
-import replyToUsers from "../helpe
+import replyToUsers from "../helpers/reply-to-users"
 import { prefix, checkUrl, siteUrl } from "../config.json"
 import Members from "../helpers/MembersHelper"
 import Points from "../constants/points"
@@ -11,7 +11,7 @@ const messages = async (message: Message) => {
 
     // ====== Send Blog Link =====
     if (message.content === "!blog") {
-      
+
       message.channel.send('Aqui está o link do nosso blog: ' + siteUrl)
 
     }
@@ -38,7 +38,7 @@ const messages = async (message: Message) => {
       Points.codeBlock,
       `${message.author.avatarURL()}`
     )
-    
+
   }
   // ===== END GAMIFY ======
 
