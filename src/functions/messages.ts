@@ -20,7 +20,7 @@ const messages = async (message: Message) => {
   }
   // ===== Send Twitter URL ====
   if (message.content === twitterPrefix) {
-    message.reply("Aqui está o link da nossa conta do Twitter" + twitterProfile)
+    message.reply("Aqui está o link da nossa conta do Twitter " + twitterProfile)
   }
 
   // ==== Return a fimba joke ====
