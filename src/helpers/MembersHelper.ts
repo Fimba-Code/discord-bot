@@ -32,6 +32,9 @@ class MembersHelper {
     try {
       const members: Participant = await Members.findOne({ username })
       if (!members) return this.create(username, points, avatar)
+
+      if (members.avatar !== avatar) members.avatar = avatar
+
       members.points += points
 
       await members.save()
