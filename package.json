@@ -1,10 +1,10 @@
 {
   "name": "comp-ranking",
   "version": "1.0.0",
-  "main": "dist/bot/index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/bot/index.ts",
+    "dev": "nodemon src/index.ts",
     "test": "NODE_ENV=test jest --forceExit --maxWorkers=10",
     "test:watch": "jest --watch",
     "ts:watch": "tsc -w",
@@ -12,13 +12,13 @@
     "tsc": "tsc",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "build": "npm run tsc",
-    "start": "node dist/bot/index.js",
+    "start": "node dist/index.js",
     "format": "prettier --write \"**/*.{js,ts,json,md}\""
   },
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
-      "<rootDir>/src/bot/__tests__/utils/*",
+      "<rootDir>/src/__tests__/utils/*",
       "<rootDir>/dist/*"
     ],
     "globals": {
