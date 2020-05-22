@@ -1,12 +1,26 @@
 import { Message } from "discord.js"
 import replyToUsers from "../helpers/reply-to-users"
-import { prefix, checkUrl } from "../config.json"
+import { prefix, checkUrl, siteUrl } from "../config.json"
 import Members from "../helpers/MembersHelper"
 import Points from "../constants/points"
+import replyWithLink from "./reply-with-link"
 
 const isCodeBlock = "(`{3})([a-zA-Z0-9_ ])*(`{3})"
 
 const messages = async (message: Message) => {
+
+    // ====== Send Blog Link =====
+    if (message.content === "!blog") {
+      message.reply("Aqui está o link do nosso blog: " + siteUrl)
+    }
+    // ====== Send Last post Link =====
+    if (message.content === "!blog:last") {
+    
+      replyWithLink((link) =>
+        message.reply("Aqui está o link do último post " + link)
+      )
+    }
+
   // ===== GAMIFY ======
   // URL
   if (new RegExp(checkUrl).test(message.content)) {
@@ -24,6 +38,7 @@ const messages = async (message: Message) => {
       Points.codeBlock,
       `${message.author.avatarURL()}`
     )
+
   }
   // ===== END GAMIFY ======
 
