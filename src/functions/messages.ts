@@ -1,6 +1,6 @@
 import { Message } from "discord.js"
 import replyToUsers from "../helpers/reply-to-users"
-import { prefix, avatarUrl, avatarExtension, checkUrl } from "../config.json"
+import { prefix, checkUrl } from "../config.json"
 import Members from "../helpers/MembersHelper"
 import Points from "../constants/points"
 
@@ -13,7 +13,7 @@ const messages = async (message: Message) => {
     await Members.addPoints(
       `${message.author.username}#${message.author.discriminator}`,
       Points.linkShare,
-      `${avatarUrl}/${message.author.id}/${message.author.avatar}.${avatarExtension}`
+      `${message.author.avatarURL()}`
     )
   }
 
@@ -22,7 +22,7 @@ const messages = async (message: Message) => {
     await Members.addPoints(
       `${message.author.username}#${message.author.discriminator}`,
       Points.codeBlock,
-      `${avatarUrl}/${message.author.id}/${message.author.avatar}.${avatarExtension}`
+      `${message.author.avatarURL()}`
     )
   }
   // ===== END GAMIFY ======
