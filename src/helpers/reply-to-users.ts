@@ -1,4 +1,4 @@
-export const replyToUsers = (messageContent: string) => {
+const replyToUsers = (messageContent: string) => {
   const greetings = [
     "ola",
     "olá",
@@ -43,3 +43,5 @@ export const replyToUsers = (messageContent: string) => {
   }
   return "Sup buddy 😎"
 }
+
+export default replyToUsers

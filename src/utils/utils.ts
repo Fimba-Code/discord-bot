@@ -1,6 +1,15 @@
-import { TextChannel, Channel, Collection, VoiceChannel } from "discord.js"
+import {
+  TextChannel,
+  Channel,
+  Collection,
+  VoiceChannel,
+  Message,
+} from "discord.js"
 
-export const fromMessageGetArgsAndCommand = (message, prefix) => {
+export const fromMessageGetArgsAndCommand = (
+  message: Message,
+  prefix: string
+) => {
   const args = message.content.slice(prefix.length).split(/ +/)
   const command = args.shift().toLowerCase()
   return { args, command }

@@ -1,6 +1,6 @@
 import { findChannelsByName, mapToChannelIds } from "../utils/utils"
 
-export const greetNewUsers = (member) => {
+const greetNewUsers = (member) => {
   // Send the message to a designated channel on a server:
   const channel = member.guild.channels.cache.find(
     (ch) => ch.name === "welcome"
@@ -39,3 +39,5 @@ export const greetNewUsers = (member) => {
     **Happy Hacking**
   `)
 }
+
+export default greetNewUsers
