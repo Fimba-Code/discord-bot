@@ -15,7 +15,7 @@ import Members from "../helpers/MembersHelper"
 import Points from "../constants/points"
 import replyWithLink from "./reply-with-link"
 
-const isCodeBlock = "(`{3})[\\w]+(?:(?!`{3})[\\s\\S])+(`{3})"
+const isCodeBlock = "(`{3})[\\w\\W]+(?:(?!`{3})[\\s\\S])+(`{3})"
 
 const messages = async (message: Message) => {
   // ====== Send Blog Link =====
