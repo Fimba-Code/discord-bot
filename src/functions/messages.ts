@@ -19,29 +19,29 @@ const isCodeBlock = "(`{3})[\\w]+(?:(?!`{3})[\\s\\S])+(`{3})"
 
 const messages = async (message: Message) => {
   // ====== Send Blog Link =====
-  if (message.content === blogPrefix) {
+  if (message.content.includes(blogPrefix)) {
     message.reply("Aqui está o link do nosso blog: " + siteUrl)
   }
   // ====== Send Last post Link =====
-  if (message.content === postPrefix) {
+  if (message.content.includes(postPrefix)) {
     replyWithLink((link) =>
       message.reply("Aqui está o link do último post " + link)
     )
   }
   // ===== Send Twitter URL ====
-  if (message.content === twitterPrefix) {
+  if (message.content.includes(twitterPrefix)) {
     message.reply(
       "Aqui está o link da nossa conta do Twitter " + twitterProfile
     )
   }
 
   // ==== Return a fimba joke ====
-  if (message.content === cursinhoPrefix) {
+  if (message.content.includes(cursinhoPrefix)) {
     message.reply("Faça CURSINHOS. 🃏")
   }
 
   // ==== Return a fimba joke ====
-  if (message.content === logicaPrefix) {
+  if (message.content.includes(logicaPrefix)) {
     message.reply("Estude LÓGICA. 🃏")
   }
 
