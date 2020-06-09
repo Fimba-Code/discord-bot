@@ -44,12 +44,16 @@ const greetNewUsers = (member) => {
 
     **Happy Hacking**
   `)
-  apresentacoesChannel.send(`
-    <@${member.user.id}>, faça uma breve apresentação e partilhe conosco quem és e o que fazes.
-  `)
-  pollChannel.send(`
-    <@${member.user.id}>, partilhe connosco as tecnologias que usas, as favoritas e/ou as queres aprender
-  `)
+
+  if (apresentacoesChannel) 
+    apresentacoesChannel.send(`
+      <@${member.user.id}>, faça uma breve apresentação e partilhe conosco quem és e o que fazes.
+    `)
+
+  if (pollChannel)
+    pollChannel.send(`
+      <@${member.user.id}>, partilhe connosco as tecnologias que usas, as favoritas e/ou as queres aprender
+    `)
 
 }
 
