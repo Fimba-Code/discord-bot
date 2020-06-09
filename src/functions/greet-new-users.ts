@@ -46,10 +46,10 @@ const greetNewUsers = (member) => {
   `)
   apresentacoesChannel.send(`
     <@${member.user.id}>, faça uma breve apresentação e partilhe conosco quem és e o que fazes.
-  `);
+  `)
   pollChannel.send(`
     <@${member.user.id}>, partilhe connosco as tecnologias que usas, as favoritas e/ou as queres aprender
-  `);
+  `)
 
 }
 
