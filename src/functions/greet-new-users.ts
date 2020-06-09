@@ -47,14 +47,13 @@ const greetNewUsers = (member) => {
 
   if (apresentacoesChannel) 
     apresentacoesChannel.send(`
-      <@${member.user.id}>, faça uma breve apresentação e partilhe conosco quem és e o que fazes.
+      <@${member.user.id}>, faça uma breve apresentação e partilhe connosco quem és e o que fazes.
     `)
 
   if (pollChannel)
     pollChannel.send(`
-      <@${member.user.id}>, partilhe connosco as tecnologias que usas, as favoritas e/ou as queres aprender
+      <@${member.user.id}>, partilhe connosco as tecnologias que usas, as favoritas e/ou as que queres aprender.
     `)
-
 }
 
 export default greetNewUsers
